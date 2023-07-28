@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-with-sidecar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-with-sidecar
+  template:
+    metadata:
+      labels:
+        app: nginx-with-sidecar
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: shared-data
+              mountPath: /usr/share/nginx/html
+        - name: sidecar-pod
+          image: thihathura/test-container
+          volumeMounts:
+            - name: shared-data
+              mountPath: /tmp/
+      volumes:
+        - name: shared-data
+          emptyDir: {}
