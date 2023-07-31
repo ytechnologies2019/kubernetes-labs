@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "echo 'YGN,MDY,NPT,AYA' > /usr/share/nginx/html/index.html && exec nginx -g 'daemon off;'"]
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
