@@ -1,0 +1,3 @@
+ip:2.2.2.2
+gw:2.2.2.254
+description: echo "Network Information"

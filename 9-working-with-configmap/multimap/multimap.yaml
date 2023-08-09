@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: map-web
+data:
+  # property-like keys; each key maps to a simple value
+  ui_properties_design_name: "index.html"
+  ui_properties_web_name: "style.css"
+
+  # file-like keys
+  index.html: |
+    htmlkey= <html><link rel="stylesheet" href="style.css"><h1>Background Colour Changed</h1></html>
+  style.css: |
+    csskey = body {background-color: rgb(7, 102, 235);}    

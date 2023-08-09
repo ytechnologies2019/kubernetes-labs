@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: env-web
+  name: env-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: env-web
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: env-web
+    spec:
+      volumes:
+      - name: web
+        configMap:
+          name: map-web
+          items:
+          - key: "index.html"
+            path: "index.html"
+          - key:  "style.css"
+            path: "style.css"
+      containers:
+      - image: nginx
+        name: nginx
+        command: ["/bin/sh"]
+        args: 
+          - "-c"
+          - |
+            echo "<link rel='stylesheet' type='text/css' href='style.css'>" >> /usr/share/nginx/html/index.html
+            nginx -g "daemon off;"
+        env:
+          - name: Change_Background
+            valueFrom:
+              configMapKeyRef:
+                name: map-web
+                key: ui_properties_design_name
+          - name: UI_PROPERTIES_DESIGN_NAME
+
+            valueFrom:
+              configMapKeyRef:
+                name: map-css
+                key: ui_properties_web_name
+        volumeMounts:
+        - name: web
+          mountPath: /usr/share/nginx/html/
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: env-web
+  name: env-web
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: env-web
+  type: NodePort
+status:
+  loadBalancer: {}
