@@ -32,20 +32,20 @@ spec:
         args: 
           - "-c"
           - |
-            echo "<link rel='stylesheet' type='text/css' href='style.css'>" >> /usr/share/nginx/html/index.html
             nginx -g "daemon off;"
         env:
-          - name: Change_Background
+          - name: Design
             valueFrom:
               configMapKeyRef:
                 name: map-web
                 key: ui_properties_design_name
-          - name: UI_PROPERTIES_DESIGN_NAME
-
+              
+          - name: ChangeBackground
             valueFrom:
               configMapKeyRef:
-                name: map-css
+                name: map-web
                 key: ui_properties_web_name
+                
         volumeMounts:
         - name: web
           mountPath: /usr/share/nginx/html/

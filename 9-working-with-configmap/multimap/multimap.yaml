@@ -9,6 +9,6 @@ data:
 
   # file-like keys
   index.html: |
-    htmlkey= <html><link rel="stylesheet" href="style.css"><h1>Background Colour Changed</h1></html>
+    <html><link rel="stylesheet" href="style.css"><h1>Background Colour Changed</h1></html>
   style.css: |
-    csskey = body {background-color: rgb(7, 102, 235);}    
+    body {background-color: rgb(120, 215, 244);;}    
