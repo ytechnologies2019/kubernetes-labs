@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cmd-web
+  name: cmd-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cmd-web
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cmd-web
+    spec:
+      volumes:
+      - name: web
+        configMap:
+          name: map-web
+          items:
+          - key: "index.html"
+            path: "index.html"
+          - key:  "style.css"
+            path: "style.css"
+      containers:
+      - image: nginx
+        name: nginx
+
+        # command: ["/bin/sh"]
+        # args: 
+        #   - "-c"
+        #   - |
+        #     nginx -g "daemon off;"
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
+        env:
+#Start up Command
+
+          - name: Design
+            valueFrom:
+              configMapKeyRef:
+                name: map-web
+                key: ui_properties_design_name
+              
+          - name: ChangeBackground
+            valueFrom:
+              configMapKeyRef:
+                name: map-web
+                key: ui_properties_web_name
+                
+        volumeMounts:
+        - name: web
+          mountPath: /usr/share/nginx/html/
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cmd-web
+  name: cmd-web
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: cmd-web
+  type: NodePort
+status:
+  loadBalancer: {}

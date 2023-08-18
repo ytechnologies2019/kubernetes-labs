@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: env-web
+  name: env-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: env-web
+  template:
+    metadata:
+      labels:
+        app: env-web
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        workingDir: /usr/share/nginx/html/
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - "nginx -g 'daemon off;'"
+        env:
+          - name: Design
+            valueFrom:
+              configMapKeyRef:
+                name: map-web
+                key: ui_properties_design_name
+          - name: ChangeBackground
+            valueFrom:
+              configMapKeyRef:
+                name: map-web
+                key: ui_properties_web_name
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: config-volume
+        configMap:
+          name: map-web
+status: {}

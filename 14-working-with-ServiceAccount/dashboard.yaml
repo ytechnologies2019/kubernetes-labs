@@ -1,0 +1,477 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Namespace","metadata":{"annotations":{},"name":"kubernetes-dashboard"}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      kubernetes.io/metadata.name: kubernetes-dashboard
+    name: kubernetes-dashboard
+    resourceVersion: "2351"
+    uid: c457b419-489c-4fff-82cf-2b4d392acca7
+  spec:
+    finalizers:
+    - kubernetes
+  status:
+    phase: Active
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+    resourceVersion: "2354"
+    uid: 95f55b28-a8c0-4e4e-9762-88d31a4dfc5f
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":443,"targetPort":8443}],"selector":{"k8s-app":"kubernetes-dashboard"}}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+    resourceVersion: "2356"
+    uid: e294777c-c99e-4dfc-845d-efe1cc1422cd
+  spec:
+    clusterIP: 10.110.216.155
+    clusterIPs:
+    - 10.110.216.155
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      k8s-app: kubernetes-dashboard
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Secret
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard-certs","namespace":"kubernetes-dashboard"},"type":"Opaque"}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard-certs
+    namespace: kubernetes-dashboard
+    resourceVersion: "2359"
+    uid: f91f7936-33a3-420d-abed-5b531f1cb484
+  type: Opaque
+- apiVersion: v1
+  data:
+    csrf: ""
+  kind: Secret
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"csrf":""},"kind":"Secret","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard-csrf","namespace":"kubernetes-dashboard"},"type":"Opaque"}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard-csrf
+    namespace: kubernetes-dashboard
+    resourceVersion: "2455"
+    uid: aab4f00b-c16a-4ea9-93bb-32ffac035c64
+  type: Opaque
+- apiVersion: v1
+  data:
+    priv: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBM1N6Y3NtMGpyT0VMOU11NUxmeDFyRDNCNE1QN3k3RGhjNjNKRWJWTEUzdlEwRzN5Ckh6UVNlVlNoM3ZnSThZMWhVMlBTZitPSDhyRDdsZCs3SnJqVk9rcUR2TTZhallKdXdneHJWVkNZQ1J5NFhIVngKRkZISjFvSEpFWHE3QVJKeis1NjYyZjhySDczcWp5aDIxRWJZNzdYU3h5MVhKZS9pQlNMdHRXeEhHSWlmVzVCMAppWVR1Uk8yZGMxUi9kMHoxdnpiRktFbjRwbllLOHRyVE5ZL1E2SDh6QjJNbFlIdW9WdU1yaDlIM1BiYVdQcXNECmNUVFhQaWxqMGczWDRJaVFSVDRzekNLbC8wMXdsTVhwZnl0a1VER0NhUzloN1JaeE1iWkFxYThValdsQzJRcWMKWUVZTHZ3cFhNTk9ocWRJSSt0TDZPbDJGcjRpL0swVitvWFdpUndJREFRQUJBb0lCQVFEUVZLaVJmSklGRG5uMwpuRW1TVW1INDJyY2JZeDl6RHVwZHp3MDlHOXBhd043QTVUOFNPemRIaC90dERZOUhEOWZqOTN2WXNOWm1PR1RTCkdFcXR2NTVCYU56TDVJUFoxVWxFaVBRMUNWUWNDU3h6RXNCdjFsWmJNaWJWeXhnSWUzdzZQNXBiS3FwUkhNK3IKQnY5ZkZsalMraDVQTkpzSkJmcU13Z2pNUWZCNTNyNDFTcDBxVXdsTng3eWppYnFhcnZNMFB1cGlqbEZvTUFCNQpIWkVENEZ3STc1YWE3TGNoUTVnbWhrVWlEOTFUTDg0TndDRnh0dGdPS09wQ1BqL1hiWHk5N2ZVbTJXT1ViUlROCmwrNlZmK2pJRyt0KytucW5aOVZMNjZqY1JMVnlGZ2tMYWdIeGxVTDJWUzFEWk1OTnBnRnBGY3B6TGU1WXh1MTcKcnNYbXhYWHhBb0dCQU9TL0c5STBtaVgrckJqOTVySWt5dXJoeko1ZTV6amcxRWRLNzgrTFNwSGdhampsMmpPOQpSeGRQZ011aDk1TUxPSGJTVklyaU1ETEF4T3N0MjBEWCtmTUV6ODkzeE9tcjBVNUxicGw3OE9IRHJ0NjFDZkVjCmNrbDZBWmd6VGEwY2pqeGlaSDVCcWtLZjRsblZHNHVtSUtkRTc2UXB6K2gxNGI4SGZZbUNpYmpaQW9HQkFQZUcKMDFFc3VCdHlxNThZQ21Ca0E3RDhVVnFVdjdBd2hROWE4TmNnM1pWWnhZZS84UkV5UzZGcjZpcU1sWkRWNmZnaQoyUHNzaTd1YTlmd0cyMzFhTEY3Ym80L3d6bWlXQkZ2TmpLQS9XWjZwVm1lZ1RIYzQvclRvZ2hDMDNJRnJMU0cwCkV3emJjVVd3QlA2ZTZja0N3UitnbFh4cnJhYmloSi94WG1pOTRrQWZBb0dBYXVtanNEamp2MVJyelhhR1o4Ym8KaktXaXhIYW83WjJ2dWU2ZGJVeTJPcjVBQjMzdTRYWGJEMXNhWUpMQUt4cjRkaGpTYU9OVkViT2xsaUlsc3dYLwpEZ1cydDBwTVg4YnRtZ0dKblBVZjNmVmUrenAwZmh3RWtyRVNvN2QrMjZWWUdZTUhZemQvdzRvRSttV3ZiVExsCldpalBOTlJTRjExWmVMYWdoeS9hL09rQ2dZRUF2RHEyQlp1NUlYNVJEam1zNG1JTUFKSFBsODlYK2JiYjZMSmkKUldZRHV1ZzZjeUcrUXpKNUd2YkNhcnJmbmZWZDU4a3dNY2xOTlV3QTFUZXR2NlJMNjVLZ3pmdjBLc294NUZIcQpKNDRsSzZkZ1Fvcyt1c2NId2pDeGY5elpkajAzWTlMWlRjU3VYYTBlRHpadlYrR1ZWT1M3NkpMRnlndWxpUzkyCmVMWTFFRWNDZ1lBR1Zkbk5OSDl6bXpxYXVHZDlKbHpTQ3RSUnM5MUNQT3FoZWdLNmNQeUJrbndlYU1IRCs2NkMKU2VQMDFPU0UyU1JPbEN1eHdkZTdzbmJCYWFyRzVvWXdmajlJVXZGb2RDVWYvNTFac3ZUWkhsd3gxOERQbWZaeApKT3dxSmhsMDM1MGFpMmN6Ym5KNE1MY2huYU5xU1FLcHpjdkZVY2lYM3ZZL2ZmU3B0REFldEE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+    pub: LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBM1N6Y3NtMGpyT0VMOU11NUxmeDEKckQzQjRNUDd5N0RoYzYzSkViVkxFM3ZRMEczeUh6UVNlVlNoM3ZnSThZMWhVMlBTZitPSDhyRDdsZCs3SnJqVgpPa3FEdk02YWpZSnV3Z3hyVlZDWUNSeTRYSFZ4RkZISjFvSEpFWHE3QVJKeis1NjYyZjhySDczcWp5aDIxRWJZCjc3WFN4eTFYSmUvaUJTTHR0V3hIR0lpZlc1QjBpWVR1Uk8yZGMxUi9kMHoxdnpiRktFbjRwbllLOHRyVE5ZL1EKNkg4ekIyTWxZSHVvVnVNcmg5SDNQYmFXUHFzRGNUVFhQaWxqMGczWDRJaVFSVDRzekNLbC8wMXdsTVhwZnl0awpVREdDYVM5aDdSWnhNYlpBcWE4VWpXbEMyUXFjWUVZTHZ3cFhNTk9ocWRJSSt0TDZPbDJGcjRpL0swVitvWFdpClJ3SURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K
+  kind: Secret
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard-key-holder","namespace":"kubernetes-dashboard"},"type":"Opaque"}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard-key-holder
+    namespace: kubernetes-dashboard
+    resourceVersion: "2456"
+    uid: f113f6c8-1e5b-4c7f-8a87-2ffb6ced3ae2
+  type: Opaque
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard-settings","namespace":"kubernetes-dashboard"}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard-settings
+    namespace: kubernetes-dashboard
+    resourceVersion: "2362"
+    uid: 3eeb230b-1e77-4e05-80a6-6a59882e1415
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"rules":[{"apiGroups":[""],"resourceNames":["kubernetes-dashboard-key-holder","kubernetes-dashboard-certs","kubernetes-dashboard-csrf"],"resources":["secrets"],"verbs":["get","update","delete"]},{"apiGroups":[""],"resourceNames":["kubernetes-dashboard-settings"],"resources":["configmaps"],"verbs":["get","update"]},{"apiGroups":[""],"resourceNames":["heapster","dashboard-metrics-scraper"],"resources":["services"],"verbs":["proxy"]},{"apiGroups":[""],"resourceNames":["heapster","http:heapster:","https:heapster:","dashboard-metrics-scraper","http:dashboard-metrics-scraper"],"resources":["services/proxy"],"verbs":["get"]}]}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+    resourceVersion: "2363"
+    uid: 7fc9edd2-9b9e-42a2-8ea1-3c314c1781a2
+  rules:
+  - apiGroups:
+    - ""
+    resourceNames:
+    - kubernetes-dashboard-key-holder
+    - kubernetes-dashboard-certs
+    - kubernetes-dashboard-csrf
+    resources:
+    - secrets
+    verbs:
+    - get
+    - update
+    - delete
+  - apiGroups:
+    - ""
+    resourceNames:
+    - kubernetes-dashboard-settings
+    resources:
+    - configmaps
+    verbs:
+    - get
+    - update
+  - apiGroups:
+    - ""
+    resourceNames:
+    - heapster
+    - dashboard-metrics-scraper
+    resources:
+    - services
+    verbs:
+    - proxy
+  - apiGroups:
+    - ""
+    resourceNames:
+    - heapster
+    - 'http:heapster:'
+    - 'https:heapster:'
+    - dashboard-metrics-scraper
+    - http:dashboard-metrics-scraper
+    resources:
+    - services/proxy
+    verbs:
+    - get
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRole
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRole","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard"},"rules":[{"apiGroups":["metrics.k8s.io"],"resources":["pods","nodes"],"verbs":["get","list","watch"]}]}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
+    resourceVersion: "2364"
+    uid: afe67d30-c5b0-4bec-9c9b-9d77e86fde86
+  rules:
+  - apiGroups:
+    - metrics.k8s.io
+    resources:
+    - pods
+    - nodes
+    verbs:
+    - get
+    - list
+    - watch
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"kubernetes-dashboard"},"subjects":[{"kind":"ServiceAccount","name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"}]}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+    resourceVersion: "2365"
+    uid: b3a253cc-ffd0-46cc-84db-218641edf1fc
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubernetes-dashboard
+  subjects:
+  - kind: ServiceAccount
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRoleBinding
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"kubernetes-dashboard"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"kubernetes-dashboard"},"subjects":[{"kind":"ServiceAccount","name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"}]}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    name: kubernetes-dashboard
+    resourceVersion: "2366"
+    uid: 35904353-a9a6-428f-b6aa-0759b5149c87
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: kubernetes-dashboard
+  subjects:
+  - kind: ServiceAccount
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"k8s-app":"kubernetes-dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"k8s-app":"kubernetes-dashboard"}},"template":{"metadata":{"labels":{"k8s-app":"kubernetes-dashboard"}},"spec":{"containers":[{"args":["--auto-generate-certificates","--namespace=kubernetes-dashboard"],"image":"kubernetesui/dashboard:v2.7.0","imagePullPolicy":"Always","livenessProbe":{"httpGet":{"path":"/","port":8443,"scheme":"HTTPS"},"initialDelaySeconds":30,"timeoutSeconds":30},"name":"kubernetes-dashboard","ports":[{"containerPort":8443,"protocol":"TCP"}],"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true,"runAsGroup":2001,"runAsUser":1001},"volumeMounts":[{"mountPath":"/certs","name":"kubernetes-dashboard-certs"},{"mountPath":"/tmp","name":"tmp-volume"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"securityContext":{"seccompProfile":{"type":"RuntimeDefault"}},"serviceAccountName":"kubernetes-dashboard","tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}],"volumes":[{"name":"kubernetes-dashboard-certs","secret":{"secretName":"kubernetes-dashboard-certs"}},{"emptyDir":{},"name":"tmp-volume"}]}}}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    generation: 1
+    labels:
+      k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
+    namespace: kubernetes-dashboard
+    resourceVersion: "2420"
+    uid: 83e31e42-f2e0-42bc-9542-248f33b50f8a
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        k8s-app: kubernetes-dashboard
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          k8s-app: kubernetes-dashboard
+      spec:
+        containers:
+        - args:
+          - --auto-generate-certificates
+          - --namespace=kubernetes-dashboard
+          image: kubernetesui/dashboard:v2.7.0
+          imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 8443
+              scheme: HTTPS
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
+          name: kubernetes-dashboard
+          ports:
+          - containerPort: 8443
+            protocol: TCP
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsGroup: 2001
+            runAsUser: 1001
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /certs
+            name: kubernetes-dashboard-certs
+          - mountPath: /tmp
+            name: tmp-volume
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          seccompProfile:
+            type: RuntimeDefault
+        serviceAccount: kubernetes-dashboard
+        serviceAccountName: kubernetes-dashboard
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/master
+        volumes:
+        - name: kubernetes-dashboard-certs
+          secret:
+            defaultMode: 420
+            secretName: kubernetes-dashboard-certs
+        - emptyDir: {}
+          name: tmp-volume
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2023-08-18T05:09:31Z"
+      lastUpdateTime: "2023-08-18T05:09:31Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2023-08-18T05:09:26Z"
+      lastUpdateTime: "2023-08-18T05:09:31Z"
+      message: ReplicaSet "kubernetes-dashboard-5c8bd6b59" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"k8s-app":"dashboard-metrics-scraper"},"name":"dashboard-metrics-scraper","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":8000,"targetPort":8000}],"selector":{"k8s-app":"dashboard-metrics-scraper"}}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    labels:
+      k8s-app: dashboard-metrics-scraper
+    name: dashboard-metrics-scraper
+    namespace: kubernetes-dashboard
+    resourceVersion: "2377"
+    uid: 28e25329-bff3-4559-9000-2f69f02c7a72
+  spec:
+    clusterIP: 10.106.102.164
+    clusterIPs:
+    - 10.106.102.164
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 8000
+      protocol: TCP
+      targetPort: 8000
+    selector:
+      k8s-app: dashboard-metrics-scraper
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"k8s-app":"dashboard-metrics-scraper"},"name":"dashboard-metrics-scraper","namespace":"kubernetes-dashboard"},"spec":{"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"k8s-app":"dashboard-metrics-scraper"}},"template":{"metadata":{"labels":{"k8s-app":"dashboard-metrics-scraper"}},"spec":{"containers":[{"image":"kubernetesui/metrics-scraper:v1.0.8","livenessProbe":{"httpGet":{"path":"/","port":8000,"scheme":"HTTP"},"initialDelaySeconds":30,"timeoutSeconds":30},"name":"dashboard-metrics-scraper","ports":[{"containerPort":8000,"protocol":"TCP"}],"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true,"runAsGroup":2001,"runAsUser":1001},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-volume"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"securityContext":{"seccompProfile":{"type":"RuntimeDefault"}},"serviceAccountName":"kubernetes-dashboard","tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}],"volumes":[{"emptyDir":{},"name":"tmp-volume"}]}}}}
+    creationTimestamp: "2023-08-18T05:09:26Z"
+    generation: 1
+    labels:
+      k8s-app: dashboard-metrics-scraper
+    name: dashboard-metrics-scraper
+    namespace: kubernetes-dashboard
+    resourceVersion: "2407"
+    uid: b88f0671-8d90-4757-bac6-34b5c0b00903
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        k8s-app: dashboard-metrics-scraper
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          k8s-app: dashboard-metrics-scraper
+      spec:
+        containers:
+        - image: kubernetesui/metrics-scraper:v1.0.8
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 8000
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
+          name: dashboard-metrics-scraper
+          ports:
+          - containerPort: 8000
+            protocol: TCP
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsGroup: 2001
+            runAsUser: 1001
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /tmp
+            name: tmp-volume
+        dnsPolicy: ClusterFirst
+        nodeSelector:
+          kubernetes.io/os: linux
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          seccompProfile:
+            type: RuntimeDefault
+        serviceAccount: kubernetes-dashboard
+        serviceAccountName: kubernetes-dashboard
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/master
+        volumes:
+        - emptyDir: {}
+          name: tmp-volume
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2023-08-18T05:09:28Z"
+      lastUpdateTime: "2023-08-18T05:09:28Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2023-08-18T05:09:27Z"
+      lastUpdateTime: "2023-08-18T05:09:28Z"
+      message: ReplicaSet "dashboard-metrics-scraper-64bcc67c9c" has successfully
+        progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+kind: List
+metadata: {}

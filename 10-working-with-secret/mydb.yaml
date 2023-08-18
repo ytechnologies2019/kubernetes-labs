@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-maria-db
+  name: my-maria-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-maria-db
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-maria-db
+    spec:
+      containers:
+      - image: mariadb
+        name: mariadb
+        command: ["/bin/sh"]
+        args: ["-c", "sleep infinity"]
+        ports:
+        - containerPort: 3306
+        resources: {}
+status: {}

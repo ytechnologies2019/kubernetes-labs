@@ -1,0 +1,117 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EUXhNekUwTkRnMU1sb1hEVE16TURReE1ERTBORGcxTWxvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTGtoCjNFbXpuNHNSTmdWb3VhS05DemtZaWNlVElhNGRlbGJDUkFDYUZGT0wwYjl3TlBWWHBxOVFlZTdydWswVTBKVVgKVXA3K2lheWVYU1FKL01iZVROaDZBUkkrY0N1aVlyeHp0eXByaXZ5U2R6Q1RuKzZQS0d4a05URHFQT1RJRjhTdwo0azhQUVZldjBJcHBzUmVHS0RiMk5zVS85S0xQYkRkOW5SaVVTV0M2UjBBYnhiOHIwTkpHMTR5TFpYYmZuNnkxCkpDK1J4aE1oVVErRE52S3I1VXFZVlNhTldybXNFTUhDRjlOTXNYY2FaeW5jcHJaMGdFN2JrRGJqL1dvTFcxYkEKMHEzL3hUUTFNdmo0TkVHU2JUbG5uUWQrT0lnTWR0OXBxU1V5Q0hER28zc0VhTFVCNEZjZTQwRkpxeUJFc0xLRApGV0F4QzFFaWNqUE9uZzBUVzhFQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZBSEVUOUU2NmluRU9QL20xUUhMMTVtZE5hcExNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQ05pNkxSTXRnL2t1bjcxbGc4MAp6eUI5UWVITTl3ckpFeElpVDhBK1pnNTZndG4wSkEzTVZXL2NYKzk1anRZdWFwSENNYXRwak1PSjJ5QkpwQmtECmRJQWkxdEFQYjlzb0g4RmFjSUtyYkVkUUgzUktBR2xJWGdNcDVlZldiNmlEZUZGVjNDd1lKSDNkbm9YNkpUREsKMnBqWlM1WDRPQ05TK2JERFd3VmtWZWp4WllhWjR1VEljaWVGbEZwa29sUmducTVHblF3MmNFeHRkcW01cUFkLwphT0hUajBZemw4UzVMYnhycncvcExJTVJBL21ndEdEZndHT3Q5WHlzQldjeVd1aHNKVHpOL0JNd0Jma2xnRnF1CkZTRmpsUHp4eXo4d09EaUpXVitGOGxhcWRDRDhMdU1ESWtZWmZvMko5RDh6WlVNVVBPZE1PVXFEQjV1TitDNzEKOVEwPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://B51B2883DA66562A8ABFE8A3DF16D5C7.sk1.us-east-2.eks.amazonaws.com
+  name: arn:aws:eks:us-east-2:088613847346:cluster/myCluster
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1USXlPREE1TVRreU9Gb1hEVE15TVRJeU5UQTVNVGt5T0Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTGNwCm5paUU0R0h6cUVhcXR5aEZSbjdpa3c1dlJ3RVlTSzhOOWJQTWtHK2hYWGN6dDl0Y0NVaE1uWjdEMDVxOThBQnEKREhocGRyeFdDSUQ3a3FwMC9FdDl2eURKL01jRURHTUtRVHUrYlo0bE1mNVJQaWNiMURDeUhkcGlrbXFHcnhBVwovM0drNnkrUXdlMFNJZm5pQlZLMzZxMit0U2p0M3lqalJRY1pwTVNmWmpEaXc2S1FwSldDYXo4d1BycFM3eVNjCkl0cHlDV2VsL1JJYVBzQ2lmYTI0Vm1aK3NnVXZtclF3VCtYQjhrMzNEM0t6bjJxdUNBRzdzK2VoMERjTEpwVHYKYm1JbUlncFA0WWpGWkFsOElnVWF4bHQ2dVlsTkxmZEQwUUNGazA5VnF5bFZvemxaT0huOWh6V1lzRlpaYW1nOApqejd2QTZRZERqS0E0dStJbU1zQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZLYWcxUG1yNUlScXBFNk9POTYzZ0t6bHpCS0JNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQ0Z4VlVIK2hGc3BOclpub09xYwpxUWE3aXhnemd1MHZEbytiY2NDTUdsYVlEdFNhbUk1dXFRMzRUcjFGSUJ5YUgxM21XVjJ5cElOWDVhQ2QydmRoCi80TVd6NDRBQzd2NnhScjdlazA2TkZ2TjY2R2U0UWJMRTJ3djlmT29MUEUvT0ZIQytza2QvaCtacS9mamV3dVMKQmQzdjc2Y1Q0S2FZbXlBQjlDUENLRWd3bmFDUkNVcG9pdGdqcXhkMlpNaFNTUW1pU2hObWNqNnhraGRhOGtJSQo5Q2lYUWVNY1A5dEcyZTBxVlU3WGlDZ3VwUy9hckJCTm82VXRNcTgrT1RnWHE0M2pYdkJkbFBYcjJWZXhTcFRzCm1QNkhseWpzR1BMMUQxd2JPL2k1S3BzR0tUck9WN2NYcDY0Tjg4Qnh6Q3V4S3drQm5PVVJYZ3poOXNwQ21xM2UKNXY0PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://127.0.0.1:58671
+  name: kind-kind
+- cluster:
+    certificate-authority: C:\Users\thihathura\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Mon, 14 Aug 2023 15:43:07 +0630
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: cluster_info
+    server: https://192.168.59.151:8443
+  name: minikube
+- cluster:
+    certificate-authority: C:\Users\thihathura\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Fri, 28 Jul 2023 13:29:53 +0630
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: cluster_info
+    server: https://192.168.59.137:8443
+  name: multinode-demo
+- cluster:
+    certificate-authority: C:\Users\thihathura\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Tue, 25 Jul 2023 12:10:16 +0630
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: cluster_info
+    server: https://192.168.59.128:8443
+  name: my-node
+contexts:
+- context:
+    cluster: arn:aws:eks:us-east-2:088613847346:cluster/myCluster
+    user: arn:aws:eks:us-east-2:088613847346:cluster/myCluster
+  name: arn:aws:eks:us-east-2:088613847346:cluster/myCluster
+- context:
+    cluster: kind-kind
+    user: kind-kind
+  name: kind-kind
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Mon, 14 Aug 2023 15:43:07 +0630
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+- context:
+    cluster: multinode-demo
+    extensions:
+    - extension:
+        last-update: Fri, 28 Jul 2023 13:29:53 +0630
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: context_info
+    namespace: default
+    user: multinode-demo
+  name: multinode-demo
+- context:
+    cluster: my-node
+    extensions:
+    - extension:
+        last-update: Tue, 25 Jul 2023 12:10:16 +0630
+        provider: minikube.sigs.k8s.io
+        version: v1.28.0
+      name: context_info
+    namespace: default
+    user: my-node
+  name: my-node
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:us-east-2:088613847346:cluster/myCluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - us-east-2
+      - eks
+      - get-token
+      - --cluster-name
+      - myCluster
+      command: aws
+      env: null
+      interactiveMode: IfAvailable
+      provideClusterInfo: false
+- name: kind-kind
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURJVENDQWdtZ0F3SUJBZ0lJTnFMVnQ5R3ZGSmd3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TWpFeU1qZ3dPVEU1TWpoYUZ3MHlNekV5TWpnd09URTVNekJhTURReApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1Sa3dGd1lEVlFRREV4QnJkV0psY201bGRHVnpMV0ZrCmJXbHVNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXlnYzhKWHkxQWc1UTJPTFIKajNUanhEbGhYUHhPUURmZGNRcjFuTHpMMVZBck5QOUxzTVJ1VGNIejFyU1dsK0NlT1VYQUxFMUZ4amRvS2M3cQpLT05lVFhDT0g5c1h0NzdtdjZZU05uNXI0Y2pxYTQrRmd3bTJ3SU00VmtsdTVZWEdYbVMwa3Q3YVBZZG5OdjAyCmxabFkxTkRkdDcwNVEwNnJzc212N0xwbXBjUkRGOU16UGV1amppa0FnLzNWdVViYUVaOUxaNEtudTRFdE5LY2YKcGgwRWdjdExTeC8vMitnVXRQZGpIZ1lxdGFvS0o2emxoT2p6STFubjExVlNacHJ2YUpJU0Z2djNFSUsrMnMreQpzT1NVNzhpOW9oV2VUdWpWdEYzN2M4SGhKQ1JTY2d1Zjc4OHBaMlU4NDd4S2dYZ2k3dkVnWjd1cDZXOStPZ0VsCmlXUlJid0lEQVFBQm8xWXdWREFPQmdOVkhROEJBZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQkJRVUgKQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JTbW9OVDVxK1NFYXFST2pqdmV0NENzNWN3UwpnVEFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBcjZkVVNMNGd1WENPems0b2toSmhxRVZTSlpNRWZ5OWFaeGpJCi8xQkx4cFVRN3Z0YmRhVitrRm9vc1FWTnUvNkIyYmpnTkM0WkUwaXJ0MWdQbm1qUWNZMkRmWElvN3AwUXZHeWkKcGpHVGFXMlpyMFlLd2pkUThDamhFeXIzL3l0RENaQVNVOXJ2U1BZVU9wL1ppSUd3UTMvZktPbUN3L20rUmExUQo5TVEwNXJyTUQwYTdJMTdYdytXTzRLZVRVN0krOWIwdXdZY1FTWTFnUHFNQkxrRzF1dWJQL3JmS2VudE1BZ2d6CjdURnBDZTNqMlAzSkxPeEk1b0JTZ0xWZ2ZaU2ptZFNTOW1hcEs3bHVKZERSMC9EUU5EaUgzdUtKcUhVRmVTTGMKdTZTeHNSTDQrUVVKM3E3YThIQzRZbFo0MjJqTXg5akRCbXFnK2owUG04UEE5d1hucFE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBeWdjOEpYeTFBZzVRMk9MUmozVGp4RGxoWFB4T1FEZmRjUXIxbkx6TDFWQXJOUDlMCnNNUnVUY0h6MXJTV2wrQ2VPVVhBTEUxRnhqZG9LYzdxS09OZVRYQ09IOXNYdDc3bXY2WVNObjVyNGNqcWE0K0YKZ3dtMndJTTRWa2x1NVlYR1htUzBrdDdhUFlkbk52MDJsWmxZMU5EZHQ3MDVRMDZyc3NtdjdMcG1wY1JERjlNegpQZXVqamlrQWcvM1Z1VWJhRVo5TFo0S251NEV0TktjZnBoMEVnY3RMU3gvLzIrZ1V0UGRqSGdZcXRhb0tKNnpsCmhPanpJMW5uMTFWU1pwcnZhSklTRnZ2M0VJSysycyt5c09TVTc4aTlvaFdlVHVqVnRGMzdjOEhoSkNSU2NndWYKNzg4cFoyVTg0N3hLZ1hnaTd2RWdaN3VwNlc5K09nRWxpV1JSYndJREFRQUJBb0lCQUJhSE1BSE9JakVVZjVkdgowNFozdGw1UE43Z3l1bGNXNDY2VFZrZ2dGV3E0QWRsckRubXJyZEVsNjVicGxGRmpUc0Y4TWEyL0FDVFdVTnM0Cm80dmpyc1JiNUwxUXBSaHNSVGJod2U0cHNzWCtyWVZJLzg1WTZ2UVVyZGVSWUxoZmJudGdKM0twUHhUVllJRVYKUTF6ek9LQ2ltZGEvVnY5V2FuY0pYb0M3V0c3cmZRYzBrNzNOKzYvZWkyVzd6cWt5VXFHY0xBZVc2dGMya2ZYdAppR0tHVUIxMGlEcEk2ZHhsTE1JZWJCWmRONlhUQUhCRlZnNXBqSFZ0WEpscCtuYnR1ZTZOMzFNRHd0a3JKblZ3CjdRVjFnRDV4clhjdkFEdlZpTERuaTI2ZlNMb0NueTd4K2pNM2NDcjlaUHN5clNneUZqK2p0Z1Y5cVl6WXMySUgKU29wMXVJRUNnWUVBNVVIakREejgyMjBRMGpEakxGd3c2bUhpTEhiaExwWlU4QlNValUySWFkYS84VnkzT2I4LwpkcXhpWXgrR1J0dUZVbkZqbWxmYXl6KzBlczI5anV0d1Z4enRzNUl1bmNuSEwyTjNGYkhJbUhTSFBlZGhoVDA3CnoyR1ZCTEpVMStXaVhzQlBjT0IzdmRTOFdzSm1IZU1DTVQ4ZUNyclUxblJQYVRuQXRIU0pJRkVDZ1lFQTRaZzYKbDl0MXpqck1ac2lOaStjMXYraGpxcVg3eEFqMWpQbjZQL1FGQjBVRGxmRzdjSmUzMlp3RWRXTXpVRmJCL2x1MAoweG9EUkJiZDBzN0t4WTBZV1Y4Z0szdmQwVk94bi9yTTk1SWx2Q3NLSjVBN0RlWjA5VWlNUjZ0VTlVMCtPMkdMCnFYdTh2N05BeGwyWnN5eVJ2Zy9nNWY0SzN0d0k5RUhmNFBueHBiOENnWUVBd3dTQ0pKWDRycHVmbEgyYnNjK1cKbUxxOVQvK3NYQm5ybFBLY3ozcWwwUXFwNnFKcEJvbUdiZWdFSmJmYVhJbytaandvYzFIS3Y5eW9KVkxBcmtQZgpJMnRyVkxiRVN0c3JRa2VGTklJd1ZtZkI1OG5jN2grQnNrNmJHZ3l0R1o2d3VaTXp3SnhobjZ6SXNSZnZEL3RjCmtSSFU5MkdvemVqUTZIMEZUVHhZclpFQ2dZQW02R0ZhcFlBSTVIMHlVTzZRclh6SXIyVFpIcTF3WHZjeXJENXIKMzBNcXdNMWdoQU9HNUxQUnRTWFR0UnM1aE8wS1dIaTBXKzBxUmlOVjQxSjNoZUVvTU03VWtSVnRyOWlYdGVLNQo1QnZiK3pSU0pINzY0NzlTT29QdkxHNkhyQjNLa2dWTFlzcm42UnVIMnNiU2J5Sm52RWRXZzEwT21MWjJvaEhoCnRGbm44d0tCZ0FuWWdrZTR4djB3WnJrMmZRVXpKUVp4ZVB2UURyd0d4SFBHZVlxMDI3ZjNOaUIvMU5VR3E0cWIKc05aek5uZjN6bldkNFpibSs1RVUwaHoxZ0g0UEp3cDlaNVNXSk56WjBQOW5ieDZNL0lDZmVIUkI5SGg3TlJERQpneDZvTy9NMmZoNkdvTTlqcHcrVGpNM2RnVnhoUVJ2azlVVzc3aDVmOWk1b2l2V0pMMmpUCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+- name: minikube
+  user:
+    client-certificate: C:\Users\thihathura\.minikube\profiles\minikube\client.crt
+    client-key: C:\Users\thihathura\.minikube\profiles\minikube\client.key
+- name: multinode-demo
+  user:
+    client-certificate: C:\Users\thihathura\.minikube\profiles\multinode-demo\client.crt
+    client-key: C:\Users\thihathura\.minikube\profiles\multinode-demo\client.key
+- name: my-node
+  user:
+    client-certificate: C:\Users\thihathura\.minikube\profiles\my-node\client.crt
+    client-key: C:\Users\thihathura\.minikube\profiles\my-node\client.key
