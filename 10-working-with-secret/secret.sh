@@ -1,0 +1,1 @@
+kubectl create secret generic my-test-secret --from-literal=mariadb-root-password=secret --dry-run=client -oyaml > my-secret.yaml
