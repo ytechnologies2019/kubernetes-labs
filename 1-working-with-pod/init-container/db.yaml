@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: db
+  name: db
+spec:
+  containers:
+  - image: mysql
+    name: db
+    env:
+     # Use secret in real usage
+     - name: MYSQL_ROOT_PASSWORD
+       value: password
+    ports:
+    - containerPort: 3306
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
