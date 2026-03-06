@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app
+spec:
+
+  initContainers:
+  - name: wait-for-mysql
+    image: busybox
+    command:
+    - sh
+    - -c
+    - |
+      echo "Waiting for MySQL..."
+      sleep 60
+      until nc -z mysql-service 3306;
+      do
+        echo "MySQL not ready..."
+        sleep 2
+      done
+      echo "MySQL is ready!"
+
+  containers:
+  - name: app
+    image: nginx
+    ports:
+    - containerPort: 80
