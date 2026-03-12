@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: low-pod
+spec:
+  priorityClassName: low-pc
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      requests:
+        cpu: "400m"
+        memory: "200Mi"

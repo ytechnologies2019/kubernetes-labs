@@ -1,0 +1,23 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-pc
+value: 100000
+globalDefault: false
+description: "High priority"
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: mid-pc
+value: 50000
+globalDefault: false
+description: "Medium priority"
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: low-pc
+value: 10000
+globalDefault: false
+description: "Low priority"
