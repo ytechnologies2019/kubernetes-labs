@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - image: public.ecr.aws/nginx/nginx:1.25.2-alpine-slim
+        name: nginx
+        ports:
+        - containerPort: 8080
+        env:
+        - name: NGINX_CONFIG
+          valueFrom:
+            configMapKeyRef:
+              name: nginx-configmap
+              key: default.conf
+        command: ["/bin/sh"]
+        args:
+          - -c
+          - |
+            echo "$NGINX_CONFIG" > /etc/nginx/conf.d/default.conf && \
+            nginx -g 'daemon off;'

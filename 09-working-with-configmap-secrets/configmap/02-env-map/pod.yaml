@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-configmap
+spec:
+  containers:
+    - name: app
+      image: public.ecr.aws/docker/library/busybox:1.36.0-musl
+      command: ["/bin/sh", "-c", "printenv; sleep infinity"]
+      envFrom:
+        - configMapRef:
+            name: myconfigmap

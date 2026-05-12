@@ -1,0 +1,1 @@
+ kubectl exec game-app -- printenv  | grep -i  player_initial_lives
